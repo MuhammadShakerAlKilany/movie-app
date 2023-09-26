@@ -22,6 +22,7 @@ export class SearchComponent implements OnInit {
       this.searchResult = data.results
       
     })
+    
    })
   }
   
