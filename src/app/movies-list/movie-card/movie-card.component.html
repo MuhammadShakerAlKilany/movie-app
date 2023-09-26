@@ -1,0 +1,24 @@
+<div class="card m-3">
+  <img
+    [src]="imgSrc(cardItem.poster_path)"
+    class="card-img-top"
+    alt="Card Image"
+  />
+
+  <div class="card-body">
+    <h5 class="card-title">{{ cardItem.original_title }}</h5>
+    <p class="card-text">{{ cardItem.original_language }}</p>
+    <p class="card-text">Price: {{ cardItem.release_date }}</p>
+    <p class="card-text">Rating: {{ cardItem.vote_count }}</p>
+    <br />
+    <button
+      class="btn btn-outline-warning rounded-pill me-2"
+      (click)="redirectToDetails(cardItem.id)"
+    >
+      Details
+    </button>
+    <button class="btn btn-outline-warning rounded-pill">
+      Add to WishList
+    </button>
+  </div>
+</div>

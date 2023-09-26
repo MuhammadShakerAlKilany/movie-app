@@ -7,9 +7,11 @@ import { SearchComponent } from './search/search/search.component';
 import { WatchlistComponent } from './watchlist/watchlist/watchlist.component';
 
 const routes: Routes = [{path:"",component:MoviesListComponent},
+
 {path:"watchlist",component:WatchlistComponent},
 {path:"details/:id",component:MovieDetailsComponent},
 {path:"search/:movie-name",component:SearchComponent},
+
 {path:"**",component:NotFoundComponent}];
 
 @NgModule({

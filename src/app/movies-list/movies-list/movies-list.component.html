@@ -1,1 +1,11 @@
-<p>movies-list works!</p>
+<section class="movies">
+  <div class="container text-center">
+    <h1 class="my-3">Movies List</h1>
+
+    <div class="row row-cols-1 row-cols-md-4 g-4 m-1">
+      <div class="col" *ngFor="let card of movies; let i = index">
+        <app-movie-card [cardItem]="card"> </app-movie-card>
+      </div>
+    </div>
+  </div>
+</section>
