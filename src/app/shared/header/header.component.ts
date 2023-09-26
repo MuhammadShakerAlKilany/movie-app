@@ -8,9 +8,21 @@ import { ApiService } from '../services/api.service';
 })
 export class HeaderComponent implements OnInit{
   imgSrc!:string
+  navbarCollapsed:boolean=true
  constructor(private apiService:ApiService){
 
  }
+ toggleNavbarCollapsing(){
+
+  this.navbarCollapsed = !this.navbarCollapsed
+ }
+ toggleNavbarCollapsingWindowResize(event:any|undefined){
+  if(event?.currentTarget.innerWidth>992){
+
+    this.navbarCollapsed = true
+  }
+ }
+
   ngOnInit(): void {
     // this.apiService.getAllMoviesPopularByPageNumber(2).subscribe((data)=>{
     //     console.log(data)
