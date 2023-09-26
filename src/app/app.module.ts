@@ -8,6 +8,8 @@ import { MovieDetailsModule } from './movie-details/movie-details.module';
 import { SharedModule } from './shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorHeaderJWTService } from './shared/services/interceptor-header-jwt.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NgbModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,
+    useClass:InterceptorHeaderJWTService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
