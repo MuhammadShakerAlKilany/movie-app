@@ -9,7 +9,8 @@ export interface Api {
     getWatchlistByPageNumber(pageNumber:number):Observable<RequestPage>,
     addToWatchlistByMovieId(movieId:number):Observable<RequestPageAddToWatchlist>,
     removeFromWatchlistByMovieId(movieId:number):Observable<RequestPageAddToWatchlist>,
-    getImgSrcByPosterPath(PosterPath:string):string
+    getImgSrcByPosterPath(PosterPath:string):string ,
+    searchByMovieName(movieName:string):Observable<RequestPage>
 
 }
 

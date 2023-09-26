@@ -1,0 +1,8 @@
+<div *ngIf="searchResult?.length== 0 && searchResult"> <app-not-found [notFoundMassage]="notFoundMassage"></app-not-found> </div>
+<div *ngIf="!searchResult"> loading.... </div>
+<div *ngIf="searchResult?.length!= 0 && searchResult ">
+    <div *ngFor="let movie of searchResult">
+        {{movie.original_title}}
+    </div> 
+</div>
+

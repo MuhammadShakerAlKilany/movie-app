@@ -1,0 +1,35 @@
+
+.navbar-collapse:not(.collapse) ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  font-size: 2rem;
+}
+nav{
+  background-color: #FFE353 !important;
+  height: 3rem;
+ & div{
+  background-color: #FFE353 !important;
+ }
+  @media (max-width:990px) {
+       &{
+      
+    height: 3.5rem;
+
+  }
+  & div{
+    padding-bottom: .2rem ;
+   }
+  
+  } 
+}
+.logo{
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.wish-movie-numper{
+  display: inline-block;
+  height: 1.8rem;
+  width: 1.7rem;
+  text-align: center;
+  color: black;
+}
