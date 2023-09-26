@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http"
 import { ApiService } from './services/api.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommonModule,
     RouterModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   exports:[
     HeaderComponent,

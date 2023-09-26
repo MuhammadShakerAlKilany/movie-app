@@ -18,8 +18,8 @@
          
         </ul>
         <form class="d-flex" [class.w-100]="!navbarCollapsed">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchVal" >
+          <input class="btn btn-outline-success" type="button" value="Search">
         </form>
       </div>
     </div>

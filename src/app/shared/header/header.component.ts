@@ -11,9 +11,32 @@ export class HeaderComponent implements OnInit{
   imgSrc!:string
   navbarCollapsed:boolean=true
   wishMovieNumper:number = 0
+  searchVal:string = ""
  constructor(private apiService:ApiService){
+   
+}
+ngOnInit(): void {
+  // this.apiService.getAllMoviesPopularByPageNumber(2).subscribe((data)=>{
+  //     console.log(data)
+  // })
+  // this.apiService.getMoviesById(878976).subscribe((data)=>{
+  //     console.log(data)
+  // })
+  // this.apiService.getRecommendedMoviesByMovieId(878976).subscribe((data)=>{
+  //     console.log(data.results)
+  // })
+  this.apiService.getWatchlistByPageNumber().subscribe((data)=>{
+   this.wishMovieNumper = data.results.length
+  })
+//   this.apiService.addToWatchlistByMovieId(878976).subscribe((data)=>{
+//     console.log(data)
+// })
+//   this.apiService.removeFromWatchlistByMovieId(878976).subscribe((data)=>{
+//     console.log(data)
+// })
+this.imgSrc = this.apiService.getImgSrcByPosterPath("/a2lxHS6Au35k5XtFQEQW44yWHeH.jpg")
+}
 
- }
  toggleNavbarCollapsing(){
 
   this.navbarCollapsed = !this.navbarCollapsed
@@ -24,27 +47,9 @@ export class HeaderComponent implements OnInit{
     this.navbarCollapsed = true
   }
  }
+ search(){
+  
+ }
 
-  ngOnInit(): void {
-    // this.apiService.getAllMoviesPopularByPageNumber(2).subscribe((data)=>{
-    //     console.log(data)
-    // })
-    // this.apiService.getMoviesById(878976).subscribe((data)=>{
-    //     console.log(data)
-    // })
-    // this.apiService.getRecommendedMoviesByMovieId(878976).subscribe((data)=>{
-    //     console.log(data.results)
-    // })
-    this.apiService.getWatchlistByPageNumber().subscribe((data)=>{
-     this.wishMovieNumper = data.results.length
-    })
-  //   this.apiService.addToWatchlistByMovieId(878976).subscribe((data)=>{
-  //     console.log(data)
-  // })
-  //   this.apiService.removeFromWatchlistByMovieId(878976).subscribe((data)=>{
-  //     console.log(data)
-  // })
- this.imgSrc = this.apiService.getImgSrcByPosterPath("/a2lxHS6Au35k5XtFQEQW44yWHeH.jpg")
-  }
  
 }
