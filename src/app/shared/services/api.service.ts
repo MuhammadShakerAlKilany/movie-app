@@ -16,6 +16,7 @@ export class ApiService implements Api {
   }
   
   
+  
   getAllMoviesPopularByPageNumber(pageNumber: number=1): Observable<RequestPage> {
    return this.httpClient.get<RequestPage>(`https://api.themoviedb.org/3/movie/popular?page=${pageNumber}`)
   }
@@ -47,6 +48,9 @@ export class ApiService implements Api {
        return this.httpClient.post<RequestPageAddToWatchlist>(`https://api.themoviedb.org/3/account/${this.accountId}/watchlist`,body)
     }
     getImgSrcByPosterPath(PosterPath: string):string {
-      return "https://image.tmdb.org/t/p/w500//a2lxHS6Au35k5XtFQEQW44yWHeH.jpg"
+      return `https://image.tmdb.org/t/p/w500/${PosterPath}`
     }
+    searchByMovieName(movieName: string): Observable<RequestPage> {
+    return this.httpClient.get<RequestPage>(`https://api.themoviedb.org/3/search/movie?query=${movieName}`)
+  }
 }
