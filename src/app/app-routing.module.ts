@@ -5,7 +5,7 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { MovieDetailsComponent } from './movie-details/movie-details/movie-details.component';
 
 const routes: Routes = [{path:"",component:MoviesListComponent},
-{path:"details",component:MovieDetailsComponent},
+{path:"details/:id",component:MovieDetailsComponent},
 {path:"**",component:NotFoundComponent}];
 
 @NgModule({
