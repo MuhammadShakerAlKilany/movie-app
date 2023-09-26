@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit{
   navbarCollapsed:boolean=true
   wishMovieNumper:number = 0
   searchVal:string = ""
- constructor(private apiService:ApiService){
+ constructor(private apiService:ApiService,private router : Router){
    
 }
 ngOnInit(): void {
@@ -48,7 +49,8 @@ this.imgSrc = this.apiService.getImgSrcByPosterPath("/a2lxHS6Au35k5XtFQEQW44yWHe
   }
  }
  search(){
-  
+ this.router.navigate(["/search",this.searchVal])   
+ 
  }
 
  

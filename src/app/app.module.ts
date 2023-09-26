@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorHeaderJWTService } from './shared/services/interceptor-header-jwt.service';
+import { SearchModule } from './search/search.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InterceptorHeaderJWTService } from './shared/services/interceptor-heade
     MovieDetailsModule,
     SharedModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    SearchModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS,
     useClass:InterceptorHeaderJWTService,

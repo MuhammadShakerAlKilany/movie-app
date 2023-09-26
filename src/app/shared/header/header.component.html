@@ -8,18 +8,18 @@
       <div class="navbar-collapse w-100" [ngClass]="{collapse:navbarCollapsed}" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
           <li class="nav-item ">
-            <a class="nav-link active " aria-current="details" routerLink="details" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact:true}">  details</a>
+            <!-- <a class="nav-link active " aria-current="details" routerLink="details" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact:true}">  details</a> -->
             
           </li>
           <li class="nav-item ">
-            <a class="nav-link active  " aria-current="watch list" routerLink="watchlist" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact:true}"><fa-icon [icon]="faHeart" class="me-1 h4"></fa-icon> <span class="h5">watchlist</span> <span [innerHTML]="wishMovieNumper" class="bg-light h5 rounded-circle" style=""></span> </a>
+            <a class="nav-link active  " aria-current="watch list" routerLink="watchlist" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact:true}"><fa-icon [icon]="faHeart" class="me-1 h4"></fa-icon> <span class="h5">watchlist</span> <span [innerHTML]="wishMovieNumper" class="bg-light h5 mx-2 wish-movie-numper rounded-2" ></span> </a>
           </li>
           
          
         </ul>
         <form class="d-flex" [class.w-100]="!navbarCollapsed">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchVal" >
-          <input class="btn btn-outline-success" type="button" value="Search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchVal" name="searchVal">
+          <input class="btn btn-outline-success" type="button" value="Search" (click)="search()">
         </form>
       </div>
     </div>
