@@ -1,0 +1,22 @@
+
+.movie-image img{
+	max-width: 100%;
+}
+.details-page{
+	margin-top: 50px;
+}
+.div-2{
+	position: relative;
+}
+.div-2 .heart{
+	position: absolute;
+	right: 0;
+	top: 20px;
+	color: rgb(255, 187, 0);
+}
+.movie-type-spans span{
+	margin-right: 7px;
+	padding: 7px 20px 8px 20px;
+	background-color:rgb(255, 187, 0); ;
+	border-radius: 6px;
+}
