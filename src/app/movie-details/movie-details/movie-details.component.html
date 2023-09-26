@@ -1,1 +1,36 @@
-<p>movie-details works!</p>
+<div class="details-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-3">
+				<div class="movie-image">
+					<img [src]="imagePoster" alt="">
+				</div>
+			</div>
+			<div class="col-9 div-2">
+				<i class="fa-solid fa-heart fa-xl heart"></i>
+				<h1>{{data.original_title}}</h1>
+				<div class="movie-rating mt-4">
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<span class="ms-2">{{data.vote_average}}</span>
+				</div>
+				<div class="movie-info">
+					<p class="mt-5">{{data.overview}}</p>
+					<div class="movie-type-spans mt-5">
+						<span>Action</span>
+						<span>Crime</span>
+						<span>Thriller</span>
+					</div>
+					<div class="spans-duration-lang mt-4">
+						<span class="me-5"><strong>Duration :</strong>{{data.vote_count}}</span>
+						<span class=""><strong>Languages:</strong> {{data.original_language}}</span>
+					</div>
+					<img >
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

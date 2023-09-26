@@ -11,6 +11,7 @@ import { RequestPage, RequestPageAddToWatchlist } from 'src/app/interfaces/reque
 export class ApiService implements Api {
 
   private accountId = 121950
+  snapshot: any;
   constructor(private httpClient:HttpClient) { 
     
   }
