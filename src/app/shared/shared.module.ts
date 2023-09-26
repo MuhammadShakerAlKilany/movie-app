@@ -5,6 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http"
 import { ApiService } from './services/api.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ApiService } from './services/api.service';
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   exports:[
     HeaderComponent,

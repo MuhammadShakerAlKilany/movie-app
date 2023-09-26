@@ -5,3 +5,23 @@
   align-items: center;  
   font-size: 2rem;
 }
+nav{
+  background-color: #FFE353 !important;
+  height: 3rem;
+ & div{
+  background-color: #FFE353 !important;
+ }
+  @media (max-width:990px) {
+       &{
+      
+    height: 3.5rem;
+  }
+  
+  } 
+}
+.logo{
+
+}
+.wish-movie-numper{
+  display: inline-block; height: 2rem; width: 2rem;  text-align: center;
+}
