@@ -1,14 +1,16 @@
 <div class="details-page">
 	<div class="container">
 		<div class="row">
-			<div class="col-3">
+			<div class="col-lg-3 col-md-12 col-sm-12">
+				<h1 class="disapeeer">{{data.original_title}}</h1>
 				<div class="movie-image">
 					<img [src]="imagePoster" alt="">
 				</div>
 			</div>
-			<div class="col-9 div-2">
+			<div class="col-lg-9 col-md-12 col-sm-12 div-2">
 				<i class="fa-solid fa-heart fa-xl heart"></i>
-				<h1>{{data.original_title}}</h1>
+				<h1 class="apeer">{{data.original_title}}</h1>
+				<p>{{data.release_date}}</p>
 				<div class="movie-rating mt-4">
 					<i class="fa-solid fa-star"></i>
 					<i class="fa-solid fa-star"></i>
@@ -20,15 +22,14 @@
 				<div class="movie-info">
 					<p class="mt-5">{{data.overview}}</p>
 					<div class="movie-type-spans mt-5">
-						<span>Action</span>
-						<span>Crime</span>
+						<span>{{data.genres[0]['name']}}</span>
+						<span>{{data.genres[1]['name']}}</span>
 						<span>Thriller</span>
 					</div>
 					<div class="spans-duration-lang mt-4">
 						<span class="me-5"><strong>Duration :</strong>{{data.vote_count}}</span>
-						<span class=""><strong>Languages:</strong> {{data.original_language}}</span>
+						<span class=""><strong>Languages:</strong> {{data.spoken_languages[0]['english_name']}}</span>
 					</div>
-					<img >
 				</div>
 			</div>
 		</div>
