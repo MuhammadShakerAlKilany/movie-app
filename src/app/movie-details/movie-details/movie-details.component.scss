@@ -10,7 +10,7 @@
 }
 .div-2 .heart{
 	position: absolute;
-	right: 0;
+	right: 10%;
 	top: 20px;
 	color: rgb(255, 187, 0);
 }
@@ -19,4 +19,28 @@
 	padding: 7px 20px 8px 20px;
 	background-color:rgb(255, 187, 0); ;
 	border-radius: 6px;
+}
+@media (min-width:991px) {
+	.disapeeer{
+		display: none;
+	}
+}
+@media (max-width:990px) {
+	.apeer{
+		display: none;
+	}
+	.disapeeer{
+		padding-bottom: 20px;
+	}
+	.div-2{
+		margin-top: 20px;
+	}
+	.div-2 .heart{
+		right: 29%;
+	}
+}
+@media (max-width:768px) {
+	.div-2 .heart{
+		right: 4%;
+	}
 }
