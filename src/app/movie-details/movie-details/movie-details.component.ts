@@ -12,7 +12,7 @@ import { ApiService } from 'src/app/shared/services/api.service';
 export class  MovieDetailsComponent implements  OnInit {
   data!: MovieDetails ;
   imagePoster!:string;
-  id:number;
+  id!:number;
   constructor(private apiServ: ApiService){}
   ngOnInit(){
     this.id = this.apiServ.snapshot.params["id"]
