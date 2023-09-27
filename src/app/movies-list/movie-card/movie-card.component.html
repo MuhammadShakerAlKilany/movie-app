@@ -7,8 +7,13 @@
 
   <div class="card-body">
     <h5 class="card-title">{{ cardItem.original_title }}</h5>
-    <p class="card-text">{{ cardItem.original_language }}</p>
-    <p class="card-text">Price: {{ cardItem.release_date }}</p>
+    <p class="card-text text-bg-success lang">
+      {{ cardItem.original_language }}
+    </p>
+    <p class="card-text">
+      <i class="fa-solid fa-star bg-warning">{{ cardItem.vote_average }}</i>
+    </p>
+    <p class="card-text">Date: {{ cardItem.release_date }}</p>
     <p class="card-text">Rating: {{ cardItem.vote_count }}</p>
     <br />
     <button
