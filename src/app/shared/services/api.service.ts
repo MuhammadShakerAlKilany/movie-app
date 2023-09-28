@@ -11,12 +11,10 @@ import { RequestPage, RequestPageAddToWatchlist } from 'src/app/interfaces/reque
 export class ApiService implements Api {
 
   private accountId = 121950
-  snapshot: any;
+ 
   constructor(private httpClient:HttpClient) { 
     
   }
-  
-  
   
   getAllMoviesPopularByPageNumber(pageNumber: number=1): Observable<RequestPage> {
    return this.httpClient.get<RequestPage>(`https://api.themoviedb.org/3/movie/popular?page=${pageNumber}`)
@@ -25,7 +23,9 @@ export class ApiService implements Api {
     return this.httpClient.get<MovieDetails>(`https://api.themoviedb.org/3/movie/${movieId}`)
   }
   getRecommendedMoviesByMovieId(movieId: number): Observable<RequestPage> {
+    
     return this.httpClient.get<RequestPage>(`https://api.themoviedb.org/3/movie/${movieId}/recommendations`)
+
   }
   getWatchlistByPageNumber(pageNumber: number=1): Observable<RequestPage> {
     return this.httpClient.get<RequestPage>(`https://api.themoviedb.org/3/account/${this.accountId}/watchlist/movies?page=${pageNumber}`)
@@ -54,4 +54,5 @@ export class ApiService implements Api {
     searchByMovieName(movieName: string): Observable<RequestPage> {
     return this.httpClient.get<RequestPage>(`https://api.themoviedb.org/3/search/movie?query=${movieName}`)
   }
+  
 }
