@@ -1,4 +1,4 @@
-<div class="card m-3">
+<div class="card m-3 position-relative">
   <img
     [src]="imgSrc(cardItem.poster_path)"
     class="card-img-top"
@@ -10,9 +10,10 @@
     <p class="card-text text-bg-success lang">
       {{ cardItem.original_language }}
     </p>
-    <p class="card-text">
-      <i class="fa-solid fa-star bg-warning">{{ cardItem.vote_average }}</i>
-    </p>
+    <div class="card-text star position-absolute">
+      <i class="fa-solid fa-star text-warning fa-2x"></i>
+      <p class="position-absolute">{{ cardItem.vote_average }}</p>
+    </div>
     <p class="card-text">Date: {{ cardItem.release_date }}</p>
     <p class="card-text">Rating: {{ cardItem.vote_count }}</p>
     <br />
