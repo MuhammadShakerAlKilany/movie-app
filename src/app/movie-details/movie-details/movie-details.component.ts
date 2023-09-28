@@ -4,7 +4,7 @@ import { timeInterval } from 'rxjs';
 import { Movie, MovieDetails } from 'src/app/interfaces/movie';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { WishListService } from 'src/app/shared/services/wish-list.service';
-
+import {IconDefinition, faStar , faStarHalf} from "@fortawesome/free-solid-svg-icons"
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
@@ -17,7 +17,8 @@ export class MovieDetailsComponent implements OnInit {
   dropImage: string | undefined;
   show: boolean = true;
   findElementInShowList?:Movie 
-  IsWishListCome:boolean=false
+  IsWishListCome:boolean=false;
+  starRating:IconDefinition[]=[]
   constructor(private apiServ: ApiService, private activateRoute: ActivatedRoute , private wishList:WishListService) {}
   addOrRemoveFromWishList(){
     if(this.findElementInShowList){
@@ -40,11 +41,21 @@ export class MovieDetailsComponent implements OnInit {
     this.wishList.wishList.subscribe((data)=>{
       this.findElementInShowList = data.find((e)=>{return e.id === this.id }) 
       this.IsWishListCome = true
+      
   });
     this.id = Number(this.activateRoute.snapshot.params["id"]) 
 
     this.apiServ.getMoviesById(this.id).subscribe((val) => {
       this.data = val;
+      for(let i=0 ; i <val.vote_average; i++ ){
+        if(i+1>val.vote_average){
+          this.starRating.push(faStarHalf)
+          
+        }else{
+
+          this.starRating.push(faStar)
+        }
+       } 
       this.imagePoster = this.apiServ.getImgSrcByPosterPath(val.poster_path);
       this.dropImage = this.apiServ.getImgSrcByPosterPath(val.backdrop_path);
     });
