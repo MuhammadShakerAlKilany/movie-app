@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
 import { Router } from '@angular/router';
+import { WishListService } from '../services/wish-list.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,29 +14,16 @@ export class HeaderComponent implements OnInit{
   navbarCollapsed:boolean=true
   wishMovieNumper:number = 0
   searchVal:string = ""
- constructor(private apiService:ApiService,private router : Router){
+ constructor(private WishList:WishListService,private router : Router){
    
 }
 ngOnInit(): void {
-  // this.apiService.getAllMoviesPopularByPageNumber(2).subscribe((data)=>{
-  //     console.log(data)
-  // })
-  // this.apiService.getMoviesById(878976).subscribe((data)=>{
-  //     console.log(data)
-  // })
-  // this.apiService.getRecommendedMoviesByMovieId(878976).subscribe((data)=>{
-  //     console.log(data.results)
-  // })
-  this.apiService.getWatchlistByPageNumber().subscribe((data)=>{
-   this.wishMovieNumper = data.results.length
+  this.WishList.upDateWishList()
+  this.WishList.wishMovieNumper.subscribe((wishMovieNumper)=>{
+
+   this.wishMovieNumper = wishMovieNumper
   })
-//   this.apiService.addToWatchlistByMovieId(878976).subscribe((data)=>{
-//     console.log(data)
-// })
-//   this.apiService.removeFromWatchlistByMovieId(878976).subscribe((data)=>{
-//     console.log(data)
-// })
-this.imgSrc = this.apiService.getImgSrcByPosterPath("/a2lxHS6Au35k5XtFQEQW44yWHeH.jpg")
+
 }
 
  toggleNavbarCollapsing(){
