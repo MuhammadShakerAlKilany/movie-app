@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SearchComponent } from './search/search.component';
 import { NotFoundComponent } from '../shared/not-found/not-found.component';
 import { SharedModule } from '../shared/shared.module';
+import { MoviesListModule } from '../movies-list/movies-list.module';
 
 
 
@@ -12,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    MoviesListModule
   ],
   exports:[SearchComponent]
 })
