@@ -14,6 +14,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     MoviesListModule,
     SharedModule
-  ]
+  ],
+  exports:[SharedModule]
 })
 export class WatchlistModule { }

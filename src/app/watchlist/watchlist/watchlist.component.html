@@ -1,12 +1,13 @@
  <div *ngIf="wishList?.length== 0 && wishList"> 
+  {{wishList}}
   <app-not-found [notFoundMassage]="notFoundMassage"></app-not-found> </div>
 <div *ngIf="!wishList"> loading.... </div>
-<main class="container">
+<main class="container" >
   <div *ngIf="wishList?.length!= 0 && wishList "  class="row row-cols-1 row-cols-md-4 g-4 m-1">
     <section *ngFor="let movie of wishList" >
          
         <app-movie-card [cardItem]="movie" ></app-movie-card>
-    </section> 
+    </section>
 </div>  
 </main>
 

@@ -11,6 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorHeaderJWTService } from './shared/services/interceptor-header-jwt.service';
 import { SearchModule } from './search/search.module';
+import { WatchlistModule } from './watchlist/watchlist.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchModule } from './search/search.module';
     SharedModule,
     NgbModule,
     FontAwesomeModule,
-    SearchModule
+    SearchModule,
+    WatchlistModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS,
     useClass:InterceptorHeaderJWTService,

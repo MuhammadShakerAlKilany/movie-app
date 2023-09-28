@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movie';
 import { ApiService } from 'src/app/shared/services/api.service';
+import { WishListService } from 'src/app/shared/services/wish-list.service';
 
 @Component({
   selector: 'app-watchlist',
@@ -10,10 +11,12 @@ import { ApiService } from 'src/app/shared/services/api.service';
 export class WatchlistComponent implements OnInit {
   wishList!:Movie[];
   notFoundMassage:string = "Not found Movie in wish list"
-  constructor(private apiService : ApiService){}
+  constructor(private wishListServ:WishListService){}
   ngOnInit(): void {
-    this.apiService.getWatchlistByPageNumber().subscribe((data)=>{
-      this.wishList = data.results
+    this.wishListServ.upDateWishList()
+    this.wishListServ.wishList.subscribe((data)=>{
+      console.log(data)
+      this.wishList = data
      })
   }
 }
