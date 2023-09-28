@@ -1,4 +1,5 @@
-
+$coloerPrimare : #FFE353 ;
+$coloerSecondary : #dabe37 ;
 .navbar-collapse:not(.collapse) ul{
   display: flex;
   flex-direction: column;
@@ -6,10 +7,11 @@
   font-size: 2rem;
 }
 nav{
-  background-color: #FFE353 !important;
+  background-color: $coloerPrimare !important;
   height: 3rem;
  & div{
-  background-color: #FFE353 !important;
+  background-color: $coloerPrimare !important;
+  z-index: 10;
  }
   @media (max-width:990px) {
        &{
@@ -32,4 +34,22 @@ nav{
   width: 1.7rem;
   text-align: center;
   color: black;
+}
+.search-text {
+  outline: 0;
+  border: .1rem solid $coloerSecondary;
+  &:focus , &:hover{
+  box-shadow: 0 0 2rem $coloerSecondary;
+}
+}
+.search-butt{
+  color: #2b250c;
+  border: 0;
+
+  transition: all .7s;
+  margin-right: 5px;
+  &:focus , &:hover{
+    background-color: $coloerSecondary;
+
+  }
 }

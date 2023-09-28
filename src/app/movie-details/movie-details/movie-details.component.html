@@ -8,7 +8,7 @@
 				</div>
 			</div>
 			<div class="col-lg-9 col-md-12 col-sm-12 div-2">
-				<i class="fa-solid fa-heart fa-xl heart"></i>
+				<i class="fa-solid fa-heart fa-xl heart" (click)="addOrRemoveFromWishList(id)" [ngClass]='findElementInShowList ?"text-warning": "text-secondary"'></i>
 				<h1 class="apeer">{{data.original_title}}</h1>
 				<p>{{data.release_date}}</p>
 				<div class="movie-rating mt-4">
@@ -20,16 +20,17 @@
 					<span class="ms-2">{{data.vote_average}}</span>
 				</div>
 				<div class="movie-info">
-					<p class="mt-5">{{data.overview}}</p>
+					<p class="mt-5">{{data.overview | showMorePipe : show}}<button class="buuton-sohw" (click)="showMore()">{{show?'show more':'show less'}}</button></p>
 					<div class="movie-type-spans mt-5">
 						<span>{{data.genres[0]['name']}}</span>
 						<span>{{data.genres[1]['name']}}</span>
 						<span>Thriller</span>
 					</div>
 					<div class="spans-duration-lang mt-4">
-						<span class="me-5"><strong>Duration :</strong>{{data.vote_count}}</span>
-						<span class=""><strong>Languages:</strong> {{data.spoken_languages[0]['english_name']}}</span>
+						<span class="me-5"><strong>Duration: </strong>{{data.vote_count}}</span>
+						<span class=""><strong>Languages: </strong> {{data.spoken_languages[0]['english_name']}}</span>
 					</div>
+					<!-- <img [src]="dropImage" alt=""> -->
 				</div>
 			</div>
 		</div>
