@@ -12,13 +12,19 @@
 	position: absolute;
 	right: 10%;
 	top: 20px;
-	color: rgb(255, 187, 0);
+	color:#ddd;
+	cursor: pointer;
 }
 .movie-type-spans span{
 	margin-right: 7px;
 	padding: 7px 20px 8px 20px;
 	background-color:rgb(255, 187, 0); ;
 	border-radius: 6px;
+}
+.buuton-sohw{
+	border:none;
+	font-weight: bold;
+	font-size: medium;
 }
 @media (min-width:991px) {
 	.disapeeer{
