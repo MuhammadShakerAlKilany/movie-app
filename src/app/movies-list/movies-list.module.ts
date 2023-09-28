@@ -13,6 +13,11 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
   imports: [
     CommonModule
   ],
-  exports:[MoviesListComponent,MovieCardComponent]
+
+  exports: [
+  MoviesListComponent,
+  MovieCardComponent
+  ]
+
 })
 export class MoviesListModule { }
