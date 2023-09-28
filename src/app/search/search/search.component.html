@@ -1,8 +1,12 @@
 <div *ngIf="searchResult?.length== 0 && searchResult"> <app-not-found [notFoundMassage]="notFoundMassage"></app-not-found> </div>
 <div *ngIf="!searchResult"> loading.... </div>
-<div *ngIf="searchResult?.length!= 0 && searchResult ">
-    <div *ngFor="let movie of searchResult">
-        {{movie.original_title}}
-    </div> 
-</div>
+<main class="container">
+  <div *ngIf="searchResult?.length!= 0 && searchResult "  class="row row-cols-1 row-cols-md-4 g-4 m-1">
+    <section *ngFor="let movie of searchResult" >
+        <!-- {{movie.original_title}} -->
+        <app-movie-card [cardItem]="movie" ></app-movie-card>
+    </section> 
+</div>  
+</main>
+
 
