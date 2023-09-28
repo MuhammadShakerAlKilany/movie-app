@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { ShowMorePipePipe } from './show-more-pipe.pipe';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -11,7 +12,8 @@ import { ShowMorePipePipe } from './show-more-pipe.pipe';
     ShowMorePipePipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   exports:[MovieDetailsComponent]
 })

@@ -11,12 +11,19 @@
 				<i class="fa-solid fa-heart fa-xl heart" (click)="addOrRemoveFromWishList()" [ngClass]='findElementInShowList ?"text-warning": "text-secondary"'></i>
 				<h1 class="apeer">{{data.original_title}}</h1>
 				<p>{{data.release_date}}</p>
+				<!-- <div class="movie-rating mt-4">
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<span class="ms-2">{{data.vote_average}}</span>
+				</div> -->
 				<div class="movie-rating mt-4">
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
+					<ng-container *ngFor="let star of starRating">
+						<fa-icon [icon]="star" class="text-warning me-1"></fa-icon>
+
+					</ng-container>
 					<span class="ms-2">{{data.vote_average}}</span>
 				</div>
 				<div class="movie-info">
