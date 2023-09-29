@@ -18,11 +18,11 @@ export class MoviesListComponent implements OnInit{
   constructor(private api: ApiService , private paginationHomePageService:PaginationHomePageService) { }
   ngOnInit() {
     // this.api.getAllMoviesPopularByPageNumber().subscribe((val) => {this.movies = val.results})
-    if(!this.movies){
+    
+    this.paginationHomePageService.homePage.subscribe((data)=>{
+      if(!data?.results){
       this.paginationHomePageService.getPage()
     }
-    this.paginationHomePageService.homePage.subscribe((data)=>{
-      console.log("data")
       this.movies = data.results
       this.pageNumper = data.page
       this.pageNumperToShow = this.pageNumper
