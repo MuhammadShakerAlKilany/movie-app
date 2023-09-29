@@ -9,3 +9,20 @@
     </div>
   </div>
 </section>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <button class="page-link" aria-label="Previous" (click)="previousPage()" [disabled]="pageNumperToShow==1" [class.disabled]="pageNumperToShow==1">
+        <span aria-hidden="true">&laquo;</span>
+      </button>
+    </li>
+    <li class="page-item" *ngFor="let num of createRange(3)"><button class="page-link " [ngClass]="(pageNumperToShow + num)==pageNumper?'bg-warning':''"#numPages (click)="getPage(pageNumperToShow + num ,numPages)">{{pageNumperToShow + num }}</button></li>
+    <!-- <li class="page-item"><button class="page-link" >{{pageNumper+1}}</button></li>
+    <li class="page-item"><button class="page-link" >{{pageNumper+2}}</button></li> -->
+    <li class="page-item">
+      <button class="page-link" aria-label="Next" (click)="nextPage()">
+        <span aria-hidden="true">&raquo;</span>
+      </button>
+    </li>
+  </ul>
+</nav>
