@@ -1,43 +1,48 @@
 <div class="details-page" *ngIf="data && IsWishListCome">
 	<div class="container">
-		<div class="row">
+		<div class="row mb-5">
 			<div class="col-lg-3 col-md-12 col-sm-12">
 				<h1 class="disapeeer">{{data.original_title}}</h1>
 				<div class="movie-image">
 					<img [src]="imagePoster" alt="">
 				</div>
 			</div>
-			<div class="col-lg-9 col-md-12 col-sm-12 div-2">
-				<i class="fa-solid fa-heart fa-xl heart" (click)="addOrRemoveFromWishList()" [ngClass]='findElementInShowList ?"text-warning": "text-secondary"'></i>
+			<div class="col-lg-9 col-md-12 col-sm-12 div-2 ">
+				<i class="fa-solid fa-heart fa-xl heart" (click)="addOrRemoveFromWishList()"
+					[ngClass]='findElementInShowList ?"text-warning": "text-secondary"'></i>
 				<h1 class="apeer">{{data.original_title}}</h1>
-				<p>{{data.release_date}}</p>
-				<!-- <div class="movie-rating mt-4">
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<span class="ms-2">{{data.vote_average}}</span>
-				</div> -->
+				<p>{{data.release_date | date}}</p>
 				<div class="movie-rating mt-4">
 					<ng-container *ngFor="let star of starRating">
 						<fa-icon [icon]="star" class="text-warning me-1"></fa-icon>
-
 					</ng-container>
 					<span class="ms-2">{{data.vote_average}}</span>
 				</div>
 				<div class="movie-info">
-					<p class="mt-5">{{data.overview | showMorePipe : show}}<button class="buuton-sohw" (click)="showMore()">{{show?'show more':'show less'}}</button></p>
+					<p class="mt-5">{{data.overview | showMorePipe : show}}<button class="buuton-sohw"
+							(click)="showMore()">{{show?'show more':'show less'}}</button></p>
 					<div class="movie-type-spans mt-5">
 						<span>{{data.genres?.[0]?.['name']}}</span>
 						<span>{{data.genres?.[1]?.['name']}}</span>
-						<span>Thriller</span>
 					</div>
 					<div class="spans-duration-lang mt-4">
 						<span class="me-5"><strong>Duration: </strong>{{data.vote_count}}</span>
 						<span class=""><strong>Languages: </strong> {{data.spoken_languages?.[0]?.['english_name']}}</span>
 					</div>
 					<!-- <img [src]="dropImage" alt=""> -->
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row mt-5 mb-5">
+			<h2>Recomendation</h2>
+			<div class="col-lg-2" *ngFor="let item of recomendArry">
+				<div class="recomended-movie mt-4">
+					<div class="movie-image">
+						<img [src]="cardImage(item.poster_path)" alt="">
+						<p class="text-center fw-bolder mb-0">{{item.original_title }}</p>
+						<p class="mt-0 text-secondary text-center">{{item.release_date | date }}</p>
+					</div>
 				</div>
 			</div>
 		</div>
