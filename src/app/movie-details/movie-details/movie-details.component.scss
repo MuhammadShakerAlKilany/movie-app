@@ -26,6 +26,18 @@
 	font-weight: bold;
 	font-size: medium;
 }
+// start recomendation 
+.recomended-movie .movie-image img{
+	border-radius: 6px;
+}
+.recomended-movie .movie-image p:not(:last-child){
+	margin-top: 13px;
+	font-size: 20px;
+}
+.recomended-movie .movie-image p:last-child{
+	font-size: 14px;
+}
+// end recomendation 
 @media (min-width:991px) {
 	.disapeeer{
 		display: none;

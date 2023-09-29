@@ -9,11 +9,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     MovieDetailsComponent,
-    ShowMorePipePipe
+    ShowMorePipePipe,
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   exports:[MovieDetailsComponent]
 })
