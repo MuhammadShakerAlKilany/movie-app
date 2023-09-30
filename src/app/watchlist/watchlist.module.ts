@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { MoviesListModule } from '../movies-list/movies-list.module';
 import { SharedModule } from '../shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -13,8 +14,9 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     MoviesListModule,
-    SharedModule
+    SharedModule,
+    FontAwesomeModule
   ],
-  exports:[SharedModule]
+  exports:[]
 })
 export class WatchlistModule { }

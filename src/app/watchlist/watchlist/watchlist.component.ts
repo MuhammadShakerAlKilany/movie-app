@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movie';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { WishListService } from 'src/app/shared/services/wish-list.service';
-
+import { faHeartBroken } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-watchlist',
   templateUrl: './watchlist.component.html',
@@ -10,14 +10,15 @@ import { WishListService } from 'src/app/shared/services/wish-list.service';
 })
 export class WatchlistComponent implements OnInit {
   wishList!:Movie[];
+  faHeartBroken=faHeartBroken
   wishListCome:boolean=false;
-  notFoundMassage:string = "Not found Movie in wish list"
+  notFoundMassage:string = "Not Found Movie in wish list"
   constructor(private wishListServ:WishListService){
     this.wishListServ.upDateWishList()
 
   }
   ngOnInit(): void {
-    console.log( this.wishListCome)
+
     this.wishListServ.upDateWishList()
     this.wishListServ.wishList.subscribe((data)=>{
       this.wishList = data
