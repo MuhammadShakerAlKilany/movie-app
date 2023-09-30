@@ -23,8 +23,7 @@
     >
       Details
     </button>
-    <button class="btn btn-outline-warning rounded-pill">
-      Add to WishList
+    <button class="btn btn-outline-warning rounded-pill" (click)="addOrRemoveFromWishList()" [innerText]="findElementInShowList?'remove from wishList':'Add to WishList'">
     </button>
   </div>
 </div>

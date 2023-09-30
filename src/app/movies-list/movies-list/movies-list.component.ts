@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movie';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { PaginationHomePageService } from 'src/app/shared/services/pagination-home-page.service';
+import { WishListService } from 'src/app/shared/services/wish-list.service';
 
 
 @Component({
@@ -15,19 +16,21 @@ export class MoviesListComponent implements OnInit{
   pageNumper!:number
   pageNumperToShow!:number
 
-  constructor(private api: ApiService , private paginationHomePageService:PaginationHomePageService) { }
+  constructor(private api: ApiService , private paginationHomePageService:PaginationHomePageService ,private wishList:WishListService) { }
   ngOnInit() {
-    // this.api.getAllMoviesPopularByPageNumber().subscribe((val) => {this.movies = val.results})
-    
+    this.wishList.upDateWishList()
     this.paginationHomePageService.homePage.subscribe((data)=>{
       if(!data?.results){
       this.paginationHomePageService.getPage()
-    }
+    }else{
+
       this.movies = data.results
       this.pageNumper = data.page
       this.pageNumperToShow = this.pageNumper
+    }
     })
     
+    // this.api.getAllMoviesPopularByPageNumber().subscribe((val) => {this.movies = val.results})
   }
   createRange(number:number){
     return new Array(number).fill(0)
