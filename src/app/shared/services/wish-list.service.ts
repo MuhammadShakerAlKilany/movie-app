@@ -9,6 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 export class WishListService {
   wishMovieNumper:BehaviorSubject<number> = new BehaviorSubject(0)
   wishList:BehaviorSubject< Movie[]> = new BehaviorSubject<Movie[]>([])
+  wishListCome:BehaviorSubject< boolean> = new BehaviorSubject<boolean>(false)
   constructor(private api:ApiService) { }
   upDateWishList(){
     this.api.getWatchlistByPageNumber().subscribe((data)=>{
@@ -17,7 +18,7 @@ export class WishListService {
       
 
         this.wishList.next(data.results)
-      
+      this.wishListCome.next(true)
 
     })
     
