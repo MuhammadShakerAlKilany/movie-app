@@ -7,13 +7,16 @@ import {HttpClientModule} from "@angular/common/http"
 import { ApiService } from './services/api.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     NotFoundComponent,
-    
+    FooterComponent
+
+
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,8 @@ import { FormsModule } from '@angular/forms';
   ],
   exports:[
     HeaderComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
