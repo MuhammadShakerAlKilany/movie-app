@@ -1,0 +1,41 @@
+  .footer {
+    background-color: #19283f;
+  }
+
+  .footer .copyright>span {
+    color: #33d1cc
+  }
+
+  .footer .copyright div span {
+    color: #ffc400;
+  }
+
+  .footer .contact ul svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer .facebook {
+    background-color: #1877f2;
+  }
+
+  .footer .twitter {
+    background-color: #1da1f2;
+  }
+
+  .footer .linkedin {
+    background-color: #0077b5;
+  }
+
+  .footer .youtube {
+    background-color: #ff0000;
+  }
+
+  .footer ul li {
+    opacity: 0.7;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .footer ul li:hover {
+    opacity: 1;
+  }
