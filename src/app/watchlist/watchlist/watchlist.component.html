@@ -1,8 +1,9 @@
 
 <div *ngIf="!wishListCome">loading....</div>
-<div *ngIf="wishList.length == 0 && wishListCome" class="fs-1">
+<div *ngIf="wishList.length == 0 && wishListCome" class=" d-flex justify-content-center flex-column align-items-center">
    
-  {{notFoundMassage}}
+ <div style="font-size: 20rem;" class="opacity-50"> <fa-icon [icon]="faHeartBroken"></fa-icon></div> 
+ <div class="fs-1">{{notFoundMassage|titlecase}}</div> 
 </div>
 <main class="container">
   <div
