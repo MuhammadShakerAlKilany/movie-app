@@ -46,7 +46,7 @@ export class MovieDetailsComponent implements OnInit {
       this.findElementInShowList = data.find((e)=>{return e.id === this.id }) 
       this.IsWishListCome = true
       
-  });
+    });
     this.id = Number(this.activateRoute.snapshot.params["id"]) 
     this.apiServ.getMoviesById(this.id).subscribe((val) => {
       this.data = val;

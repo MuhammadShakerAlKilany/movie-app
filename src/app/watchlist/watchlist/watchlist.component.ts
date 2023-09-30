@@ -11,12 +11,14 @@ import { WishListService } from 'src/app/shared/services/wish-list.service';
 export class WatchlistComponent implements OnInit {
   wishList!:Movie[];
   notFoundMassage:string = "Not found Movie in wish list"
-  constructor(private wishListServ:WishListService){}
-  ngOnInit(): void {
+  constructor(private wishListServ:WishListService){
     this.wishListServ.upDateWishList()
+
+  }
+  ngOnInit(): void {
     this.wishListServ.wishList.subscribe((data)=>{
-      console.log(data)
+      
       this.wishList = data
-     })
+    })
   }
 }
