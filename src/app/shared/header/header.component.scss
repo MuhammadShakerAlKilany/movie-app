@@ -1,5 +1,7 @@
-$coloerPrimare : #FFE353 ;
-$coloerSecondary : #dabe37 ;
+$coloer-primare : #FFE353 ;
+$coloer-secondary : #dabe37 ;
+$coloer-active : #7a6706 ;
+
 .navbar-collapse:not(.collapse) ul{
   display: flex;
   flex-direction: column;
@@ -7,10 +9,10 @@ $coloerSecondary : #dabe37 ;
   font-size: 2rem;
 }
 nav{
-  background-color: $coloerPrimare !important;
+  background-color: $coloer-primare !important;
   height: 3rem;
  & div{
-  background-color: $coloerPrimare !important;
+  background-color: $coloer-primare !important;
   z-index: 10;
  }
   @media (max-width:990px) {
@@ -37,9 +39,9 @@ nav{
 }
 .search-text {
   outline: 0;
-  border: .1rem solid $coloerSecondary;
+  border: .1rem solid $coloer-secondary;
   &:focus , &:hover{
-  box-shadow: 0 0 2rem $coloerSecondary;
+  box-shadow: 0 0 2rem $coloer-secondary;
 }
 }
 .search-butt{
@@ -49,7 +51,7 @@ nav{
   transition: all .7s;
   margin-right: 5px;
   &:focus , &:hover{
-    background-color: $coloerSecondary;
+    background-color: $coloer-secondary;
 
   }
 }
