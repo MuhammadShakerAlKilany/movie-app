@@ -1,4 +1,4 @@
-<div class="card m-3 position-relative">
+<div class="card position-relative">
   <img
     [src]="imgSrc(cardItem.poster_path)"
     class="card-img-top"
@@ -6,24 +6,29 @@
   />
 
   <div class="card-body">
-    <h5 class="card-title">{{ cardItem.original_title }}</h5>
-    <p class="card-text text-bg-success lang">
-      {{ cardItem.original_language }}
-    </p>
-    <div class="card-text star position-absolute">
-      <i class="fa-solid fa-star text-warning fa-2x"></i>
-      <p class="position-absolute">{{ cardItem.vote_average }}</p>
+    <div class="text-content">
+      <h6 class="card-title fw-bold ">{{ cardItem.original_title}}</h6>
+      <p class="card-text text-bg-success lang ">
+        {{ cardItem.original_language }}
+      </p>
     </div>
-    <p class="card-text">Date: {{ cardItem.release_date }}</p>
-    <p class="card-text">Rating: {{ cardItem.vote_count }}</p>
-    <br />
-    <button
-      class="btn btn-outline-warning rounded-pill me-2"
+    <div class="card-text star">
+      <i class="fa-solid mt-2 fa-star text-warning fa-2x"></i>
+      <p class="">{{ cardItem.vote_average }} /10</p>
+    </div>
+    <div class="rating mb-3">
+      <p class="card-text m-0"><strong>date</strong>: {{ cardItem.release_date | date }}</p>
+      <p class="card-text mb-1"><strong>Rating</strong>: {{ cardItem.vote_count }}</p>
+    </div>
+    <div class="btns d-flex justify-content-center align-content-center">
+      <button
+      class="btn btn-outline-warning rounded-pill me-2 "
       (click)="redirectToDetails(cardItem.id)"
     >
       Details
     </button>
-    <button class="btn btn-outline-warning rounded-pill" (click)="addOrRemoveFromWishList()" [innerText]="findElementInShowList?'remove from wishList':'Add to WishList'">
+    <button class="btn btn-outline-warning rounded-pill" (click)="addOrRemoveFromWishList()" [innerText]="findElementInShowList?'remove ':'Add to WishList'">
     </button>
+    </div>
   </div>
 </div>
