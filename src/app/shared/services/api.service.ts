@@ -51,8 +51,9 @@ export class ApiService implements Api {
     getImgSrcByPosterPath(PosterPath: string):string {
       return `https://image.tmdb.org/t/p/w500/${PosterPath}`
     }
-    searchByMovieName(movieName: string): Observable<RequestPage> {
-    return this.httpClient.get<RequestPage>(`https://api.themoviedb.org/3/search/movie?query=${movieName}`)
+    searchByMovieName(movieName: string,pageNumper:number=1): Observable<RequestPage> {
+      
+    return this.httpClient.get<RequestPage>(`https://api.themoviedb.org/3/search/movie?query=${movieName}&page=${pageNumper}`)
   }
   
 }
