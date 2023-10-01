@@ -1,12 +1,20 @@
 <div *ngIf="!wishListCome">loading....</div>
-<div *ngIf="wishList.length == 0 && wishListCome" class=" d-flex justify-content-center flex-column align-items-center">
-  <div style="font-size: 20rem;" class="opacity-50"> <fa-icon [icon]="faHeartBroken"></fa-icon></div>
-  <div class="fs-1">{{notFoundMassage|titlecase}}</div>
+<div
+  *ngIf="wishList.length == 0 && wishListCome"
+  class="d-flex justify-content-center flex-column align-items-center"
+>
+  <div style="font-size: 20rem" class="opacity-50">
+    <fa-icon [icon]="faHeartBroken"></fa-icon>
+  </div>
+  <div class="fs-1">{{ notFoundMassage | titlecase }}</div>
 </div>
 <div class="container">
   <div *ngIf="wishList?.length != 0 && wishListCome" class="row mt-5 mb-5">
-    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let movie of wishList">
-        <app-movie-card [cardItem]="movie"></app-movie-card>
+    <div
+      class="col-lg-3 col-md-4 col-sm-6 text-center"
+      *ngFor="let movie of wishList"
+    >
+      <app-movie-card [cardItem]="movie"></app-movie-card>
     </div>
   </div>
 </div>

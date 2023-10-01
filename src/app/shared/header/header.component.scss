@@ -5,7 +5,7 @@ $coloer-active : #7a6706 ;
 .navbar-collapse:not(.collapse) ul{
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
   font-size: 2rem;
 }
 nav{
@@ -17,16 +17,17 @@ nav{
  }
   @media (max-width:990px) {
        &{
-      
+
     height: 3.5rem;
 
   }
   & div{
     padding-bottom: .2rem ;
    }
-  
-  } 
+
+  }
 }
+
 .logo{
  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
