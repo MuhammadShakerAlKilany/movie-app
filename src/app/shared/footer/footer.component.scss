@@ -1,22 +1,29 @@
-  .footer {
-    background-color: #19283f;
-  }
+.footer {
+  background-color: #19283f;
+  margin-top: 40px;
+}
 
-  .footer .copyright>span {
-    color: #33d1cc
-  }
+.footer .copyright>span {
+  color: #33d1cc;
+}
 
-  .footer .copyright div span {
-    color: #ffc400;
-  }
-  .footer ul li {
-    opacity: 0.7;
-    transition: all 0.4s ease-in-out;
-  }
+.footer .copyright div span {
+  color: #ffc400;
+}
+.footer ul li {
+  opacity: 0.7;
+  transition: all 0.4s ease-in-out;
+}
 
-  .footer ul li:hover {
+.footer ul li:hover {
     opacity: 1;
-  }
-.email-color:hover{
-  color:#fff
+}
+.email-color a{
+  color:#fff;
+    border:ipx solid #fff;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+}
+.email-color:hover a{
+  color: #ffc400;
 }
