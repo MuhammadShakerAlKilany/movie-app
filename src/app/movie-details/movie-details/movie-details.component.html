@@ -1,3 +1,8 @@
+<div *ngIf="!data">
+  <div class="loader">
+    <div class="spinner"></div>
+  </div>
+</div>
 <div class="details-page" *ngIf="data && IsWishListCome">
   <div class="container">
     <div class="row mb-5">
@@ -33,15 +38,17 @@
             <span>{{data.genres?.[1]?.['name']}}</span>
           </div>
           <div class="spans-duration-lang mt-4">
-            <span class="me-5"
-              ><strong>Duration: </strong>{{ data.vote_count }}</span
-            >
+            <span class="me-5">
+              <strong>Date</strong>: {{ data.release_date | date }}
+            </span>
             <span class=""
               ><strong>Languages: </strong>
               {{data.spoken_languages?.[0]?.['english_name']}}</span
             >
+            <p class="card-text m-1">
+              <strong>Rating</strong>: {{ data.vote_count }}
+            </p>
           </div>
-          <!-- <img [src]="dropImage" alt=""> -->
         </div>
       </div>
     </div>

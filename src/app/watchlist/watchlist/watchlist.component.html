@@ -1,4 +1,8 @@
-<div *ngIf="!wishListCome">loading....</div>
+<div *ngIf="!wishListCome">
+  <div class="loader">
+    <div class="spinner"></div>
+  </div>
+</div>
 <div
   *ngIf="wishList.length == 0 && wishListCome"
   class="d-flex justify-content-center flex-column align-items-center"
